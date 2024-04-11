@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tax Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="form-box">
+      <form id="taxForm">
+       <div class="input-field">
+          <h2>Gross Annual Income <img src="question_icon.png" alt="Question Mark" class="questionIcon" onmouseover="showTooltip('incomeTooltip')" onmouseout="hideTooltip('incomeTooltip')"></h2>
+          <div id="incomeTooltip" class="tooltip">Enter your gross annual income here</div>
+          <input type="number" id="income">
+          <img id="incomeError" class="errorIcon" src="error_icon.png" alt="Error Icon" title="Invalid income value">
+        </div>
+        <div class="input-field">
+          <h2>Extra Income <img src="question_icon.png" alt="Question Mark" class="questionIcon" onmouseover="showTooltip('extraIncomeTooltip')" onmouseout="hideTooltip('extraIncomeTooltip')"></h2>
+          <div id="extraIncomeTooltip" class="tooltip">Enter any extra income here</div>
+          <input type="number" id="extraIncome">
+          <img id="extraIncomeError" class="errorIcon" src="error_icon.png" alt="Error Icon" title="Invalid extra income value">
+        </div>
+        <div class="input-field">
+          <h2>Deductions <img src="question_icon.png" alt="Question Mark" class="questionIcon" onmouseover="showTooltip('deductionsTooltip')" onmouseout="hideTooltip('deductionsTooltip')"></h2>
+          <div id="deductionsTooltip" class="tooltip">Enter any deductions here</div>
+          <input type="number" id="deductions">
+          <img id="deductionsError" class="errorIcon" src="error_icon.png" alt="Error Icon" title="Invalid deductions value">
+        </div>
+        <div class="input-field">
+          <h2>Age<img src="question_icon.png" alt="Question Mark" class="questionIcon" onmouseover="showTooltip('ageTooltip')" onmouseout="hideTooltip('ageTooltip')"></h2>
+          <div id="ageTooltip" class="tooltip">Select your age group</div>
+          <select id="age">
+            <option value="">Select age group</option>
+            <option value="<40">&lt;40</option>
+            <option value=">=40&<60">&ge;40 &lt;60</option>
+            <option value=">=60">&ge;60</option>
+          </select>
+          <img id="ageError" class="errorIcon" src="error_icon.png" alt="Error Icon" title="Age cannot be empty">
+        </div>
+        <button type="button" id="submitBtn">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>Your overall income will be</h2>
+      <h3 id="calculatedIncome"></h3>
+      <h6>after tax deductions</h6>
+      <button type="button" id="submitModalBtn" style="background-color: #7289da; color: white;">Close</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
